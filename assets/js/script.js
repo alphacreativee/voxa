@@ -1,7 +1,28 @@
-// A $( document ).ready() block.
+"use strict";
+$ = jQuery;
+
 $(document).ready(function () {
-  console.log("ready!");
-  pinLogoHeader();
+    gsap.config({ trialWarn: false });
+    console.clear();
+    gsap.registerPlugin(ScrollTrigger, SplitType);
+    
+    const split = new SplitType(".quote-wrapper .text span", { type: "chars" });
+    
+    split.lines.forEach((target) => {
+      gsap.to(target, {
+        backgroundPositionX: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: target,
+          markers: false,
+          scrub: 1,
+          start: "top center",
+          end: "bottom center",
+        },
+      });
+    });
+    
+    pinLogoHeader();
 });
 
 function pinLogoHeader() {
