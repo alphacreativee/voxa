@@ -1,0 +1,145 @@
+:root {
+  --scale: 2.5;
+  --font-body: "SVN-Poppins", sans-serif;
+  --font-heading: "Termina Test", sans-serif;
+  --color-primary: #7a90c9;
+  --color-secondary: #1c214f;
+  --color-third: #ff5465;
+  --color-fourth: #e2dfdd;
+  --color-white: #fff;
+}
+/* color */
+.color-primary {
+  color: var(--color-primary);
+}
+.color-secondary {
+  color: var(--color-secondary);
+}
+.color-third {
+  color: var(--color-third);
+}
+.color-fourth {
+  color: var(--color-fourth);
+}
+.color-white {
+  color: var(--color-white);
+}
+/* font */
+.font-heading {
+  font-family: var(--font-heading);
+}
+.font-body {
+  font-family: var(--font-body);
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+.header__container {
+  padding: 24px;
+}
+.header__logo {
+  width: 160px;
+  height: 48px;
+}
+.header__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero__img {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.hero__bg--blur {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-white);
+  /* background-color: red; */
+  filter: blur(60px);
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: 2;
+  animation: rotateCircle 10s linear infinite;
+}
+
+.hero__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(var(--scale));
+  animation: rotateBg 300s linear infinite;
+}
+@keyframes rotateBg {
+  from {
+    transform: rotate(0deg) scale(var(--scale));
+  }
+  to {
+    transform: rotate(360deg) scale(var(--scale));
+  }
+}
+@keyframes rotateCircle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spacing {
+  height: 50vh;
+  background-color: red;
+}
+/* section our mission */
+.our-mission {
+  background-color: var(--color-secondary);
+  width: 100%;
+}
+.our-misson__title--sub {
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 900;
+}
+/* end section our mission */
