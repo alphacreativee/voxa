@@ -2,11 +2,34 @@
   --scale: 2.5;
   --font-heading: "SVN-Poppins", sans-serif;
   --font-body: "Termina Test", sans-serif;
-  --color-primary: #7A90C9
-  --color-secondary: #1C214F;
-  --color-third:#FF5465;
-  --color-fourth:#E2DFDD;
+  --color-primary: #7a90c9;
+  --color-secondary: #1c214f;
+  --color-third: #ff5465;
+  --color-fourth: #e2dfdd;
   --color-white: #fff;
+}
+/* color */
+.color-primary {
+  color: var(--color-primary);
+}
+.color-secondary {
+  color: var(--color-secondary);
+}
+.color-third {
+  color: var(--color-third);
+}
+.color-fourth {
+  color: var(--color-fourth);
+}
+.color-white {
+  color: var(--color-white);
+}
+/* font */
+.font-heading {
+  font-family: var(--font-heading);
+}
+.font-body {
+  font-family: var(--font-body);
 }
 *,
 *:before,
@@ -109,3 +132,14 @@ body {
   height: 50vh;
   background-color: red;
 }
+/* section our mission */
+.our-mission {
+  background-color: var(--color-secondary);
+  width: 100%;
+}
+.our-misson__title--sub {
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 900;
+}
+/* end section our mission */
