@@ -2,31 +2,32 @@
 $ = jQuery;
 
 $(document).ready(function () {
-    gsap.config({ trialWarn: false });
-    console.clear();
-    gsap.registerPlugin(ScrollTrigger, SplitType);
-    
-    const split = new SplitType(".quote-wrapper .text span", { type: "chars" });
-    
-    split.lines.forEach((target) => {
-      gsap.to(target, {
-        backgroundPositionX: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: target,
-          markers: false,
-          scrub: 1,
-          start: "top center",
-          end: "bottom center",
-        },
-      });
+  gsap.config({ trialWarn: false });
+  console.clear();
+  gsap.registerPlugin(ScrollTrigger, SplitType);
+
+  const split = new SplitType(".quote-wrapper .text span", { type: "chars" });
+
+  split.lines.forEach((target) => {
+    gsap.to(target, {
+      backgroundPositionX: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: target,
+        markers: false,
+        scrub: 1,
+        start: "top center",
+        end: "bottom center",
+      },
     });
-    
-    pinLogoHeader();
+  });
+
+  pinLogoHeader();
 });
 
 function pinLogoHeader() {
   gsap.registerPlugin(ScrollTrigger);
+  const headerLogo = document.querySelector(".header__logo");
   const logo = document.querySelector("#logo");
   const originalHeight = logo.offsetHeight;
   const scaleFactor = 2.56;
@@ -61,6 +62,14 @@ function pinLogoHeader() {
         // markers: true,
         scrub: true,
       },
+    });
+    ScrollTrigger.create({
+      trigger: ".our-mission",
+      start: "top top+=40", // Khi section xuất hiện giữa màn hình
+      end: "bottom top",
+      // markers: true,
+      onEnter: () => logo.classList.add("in-section"), // Khi vào section
+      onLeaveBack: () => logo.classList.remove("in-section"), // Khi rời khỏi section
     });
   };
   animate();
