@@ -9,8 +9,52 @@
     height: 42px;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   :root {
     --scale: 3;
+  }
+  .our-misson__content {
+    padding: 256px 24px 40px;
+  }
+  .our-misson__title--sub {
+    font-size: 24px;
+    line-height: 1;
+    padding-left: 48px;
+  }
+  .our-misson__title--main {
+    font-size: 40px;
+    margin-bottom: 0;
+  }
+  .our-misson__description {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .our-misson__title {
+    margin-bottom: 40px;
+  }
+  .our-mission {
+    background-position: -75% center;
+  }
+  section.section-image {
+    width: 100%;
+    aspect-ratio: 1;
+    height: auto;
+  }
+  section.our-family .our-family__sub {
+    padding-left: 45px;
+  }
+  section.our-family .our-family__list {
+    grid-template-columns: 1fr;
+  }
+  section.section-quote .quote-wrapper {
+    padding: 110px 40px;
+  }
+  section.section-quote .text {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  section.section-quote .author {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
