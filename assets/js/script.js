@@ -76,3 +76,29 @@ function pinLogoHeader() {
   };
   animate();
 }
+function customAnimation() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".data-fade-in").forEach((element, i) => {
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        y: 20,
+      },
+      {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 59%",
+          end: "bottom 59%",
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "sine.out",
+        stagger: 0.1,
+      }
+    );
+  });
+}
+customAnimation();
