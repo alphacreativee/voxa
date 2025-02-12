@@ -50,7 +50,7 @@ section.section-quote .text svg.close {
 
 section.section-quote .quote-wrapper {
   margin: 0 auto;
-  padding: 180px 80px;
+  padding: 180px 50px;
   text-align: center;
 }
 
@@ -220,7 +220,7 @@ footer .footer-top .title-text {
   width: max-content;
   text-transform: uppercase;
   margin-right: 100px;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
 }
 
 footer .footer-top {
