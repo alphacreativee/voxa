@@ -50,7 +50,7 @@ section.section-quote .text svg.close {
 
 section.section-quote .quote-wrapper {
   margin: 0 auto;
-  padding: 180px 50px;
+  padding: 180px 0;
   text-align: center;
 }
 
@@ -203,8 +203,8 @@ footer .footer-bottom .alpha {
   transition: all 0.4s ease;
 }
 
-footer .footer-bottom .alpha:hover{
-    color: var(--color-secondary);
+footer .footer-bottom .alpha:hover {
+  color: var(--color-secondary);
 }
 
 footer .footer-bottom {
@@ -227,6 +227,8 @@ footer .footer-top .title-text {
 footer .footer-top {
   display: flex;
   align-items: flex-start;
+  position: relative;
+  z-index: 3;
 }
 
 footer .footer-top ul {
