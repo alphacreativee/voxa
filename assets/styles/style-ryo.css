@@ -61,9 +61,116 @@ section.section-image img{
     object-position: top right;
 }
 
+/* section our family */
+section.our-family{
+    background-color: #7a90c9;
+}
+
+section.our-family .our-family__sub{
+    padding-left: 80px;
+}
+
+section.our-family .our-family__title{
+    padding: 64px 0;
+    width: max-content;
+    margin: 0 auto;
+}
+
+section.our-family .our-family__list{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+section.our-family .our-family__list .list-item{
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+section.our-family .our-family__list .list-item .content{
+    width: 60%;
+    text-align: center;
+    color: #FFF;
+    position: relative;
+    z-index: 2;
+}
+
+section.our-family .our-family__list .list-item .title{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold;
+    font-family: var(--font-heading);
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+section.our-family .our-family__list .list-item .desc{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: var(--font-body);
+    margin-top: 24px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    transition-delay: 0s;
+}
+
+section.our-family .our-family__list .list-item:hover .title,
+section.our-family .our-family__list .list-item:hover .desc{
+    opacity: 1;
+    transform: translate(0);
+}
+
+section.our-family .our-family__list .list-item:hover .desc{
+    transition-delay: 0.2s;
+}
+
+section.our-family .our-family__list .list-item .background-image{
+    position: absolute;
+    inset: 0;
+}
+
+section.our-family .our-family__list .list-item .background-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+section.our-family .our-family__list .list-item::after{
+    content: "";
+    background-color: rgb(28, 33, 79, 0.5);
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: width 0.6s, height 0.6s, opacity 0.6s;
+    transition-delay: opacity 0.6s;
+}
+
+section.our-family .our-family__list .list-item:hover::after{
+    width: 300%;
+    height: 300%;
+    opacity: 1;
+    transition: width 0.6s, height 0.6s;
+    transition-delay: opacity 0s;
+}
 
 /* footer */
-
 footer{
     padding: 165px 40px 20px;
     background-color: #FF5465;
