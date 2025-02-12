@@ -200,6 +200,11 @@ footer .footer-bottom .alpha {
   color: #fff;
   text-decoration: none;
   font-family: var(--font-heading);
+  transition: all 0.4s ease;
+}
+
+footer .footer-bottom .alpha:hover{
+    color: var(--color-secondary);
 }
 
 footer .footer-bottom {
