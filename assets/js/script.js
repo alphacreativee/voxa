@@ -109,3 +109,27 @@ function customAnimation() {
   });
 }
 customAnimation();
+
+function scaleSectionImage() {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.fromTo(
+    ".section-image__container",
+    {
+      scale: "1.2",
+    },
+    {
+      scrollTrigger: {
+        trigger: ".section-image",
+        start: "top 60%",
+        end: "bottom 60%",
+        scrub: true,
+        // markers: true,
+      },
+      scale: "1",
+      duration: 1,
+      ease: "sine.out",
+      stagger: 0.1,
+    }
+  );
+}
+scaleSectionImage();
