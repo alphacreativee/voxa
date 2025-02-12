@@ -17,12 +17,13 @@ $(document).ready(function () {
         markers: false,
         scrub: 1,
         start: "top center",
-        end: "bottom center",
-      },
+        end: "bottom center"
+      }
     });
   });
 
   pinLogoHeader();
+  ourFamily();
 });
 
 function pinLogoHeader() {
@@ -44,7 +45,7 @@ function pinLogoHeader() {
         autoAlpha: 1,
 
         duration: 1.5,
-        ease: "power2.out", // Sau khi scale xong thì gọi animation scroll
+        ease: "power2.out" // Sau khi scale xong thì gọi animation scroll
       }
     );
     gsap.from("#logo", {
@@ -60,8 +61,8 @@ function pinLogoHeader() {
         end: "bottom 50%",
         // pin: true,
         // markers: true,
-        scrub: true,
-      },
+        scrub: true
+      }
     });
     document.querySelectorAll(".logo-white").forEach((section) => {
       ScrollTrigger.create({
@@ -77,7 +78,7 @@ function pinLogoHeader() {
         onEnterBack: () =>
           document.querySelector("#logo").classList.add("in-section"),
         onLeaveBack: () =>
-          document.querySelector("#logo").classList.remove("in-section"),
+          document.querySelector("#logo").classList.remove("in-section")
       });
     });
   };
@@ -91,19 +92,19 @@ function customAnimation() {
       element,
       {
         opacity: 0,
-        y: 20,
+        y: 20
       },
       {
         scrollTrigger: {
           trigger: element,
           start: "top 59%",
-          end: "bottom 59%",
+          end: "bottom 59%"
         },
         opacity: 1,
         y: 0,
         duration: 1,
         ease: "sine.out",
-        stagger: 0.1,
+        stagger: 0.1
       }
     );
   });
@@ -133,3 +134,18 @@ function scaleSectionImage() {
   );
 }
 scaleSectionImage();
+
+function ourFamily() {
+  if (!$("section.our-family").length) return;
+
+  const itemFamily = $("section.our-family .list-item");
+
+  itemFamily.mousemove(function (e) {
+    let offset = $(this).offset();
+    let x = e.pageX - offset.left;
+    let y = e.pageY - offset.top;
+
+    $(this).css("--x", x + "px");
+    $(this).css("--y", y + "px");
+  });
+}
