@@ -1,6 +1,11 @@
 "use strict";
 $ = jQuery;
 
+window.onload = function () {
+  window.scrollTo(0, 0);
+  ScrollTrigger.refresh();
+}
+
 $(document).ready(function () {
   gsap.config({ trialWarn: false });
   console.clear();
