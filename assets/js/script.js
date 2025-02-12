@@ -38,16 +38,20 @@ function pinLogoHeader() {
   const headerLogo = document.querySelector(".header__logo");
   const logo = document.querySelector("#logo");
   const originalHeight = logo.offsetHeight;
-  const scaleFactor = 2.56;
+  const scaleFactor = window.innerWidth < 991 ? 1.8 : 2.56;
 
   const scaledHeight = originalHeight * scaleFactor;
   console.log(scaledHeight);
 
+  const yPos =
+    window.innerWidth < 991
+      ? window.innerHeight * 0.5
+      : window.innerHeight * 0.5 - scaledHeight * 0.5 + 48;
   const animate = () => {
     gsap.from("#logo", {
       duration: 1.5,
       scale: scaleFactor,
-      y: window.innerHeight * 0.5 - scaledHeight * 0.5 + 48,
+      y: yPos,
       x: "0%",
       // transformOrigin: "left center",
 
