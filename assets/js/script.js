@@ -44,17 +44,6 @@ function pinLogoHeader() {
   console.log(scaledHeight);
 
   const animate = () => {
-    // gsap.fromTo(
-    //   "#logo",
-    //   { scale: 1, autoAlpha: 0 }, // Bắt đầu với scale nhỏ và ẩn
-    //   {
-    //     scale: scaleFactor,
-    //     autoAlpha: 1,
-
-    //     duration: 1,
-    //     ease: "power2.out" // Sau khi scale xong thì gọi animation scroll
-    //   }
-    // );
     gsap.from("#logo", {
       duration: 1.5,
       scale: scaleFactor,
@@ -90,6 +79,7 @@ function pinLogoHeader() {
     });
   };
   animate();
+  ScrollTrigger.refresh();
 }
 function customAnimation() {
   gsap.registerPlugin(ScrollTrigger);
@@ -106,6 +96,29 @@ function customAnimation() {
           trigger: element,
           start: "top 59%",
           end: "bottom 59%",
+          // markers: true,
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "sine.out",
+        stagger: 0.1,
+      }
+    );
+  });
+  gsap.utils.toArray(".data-fade-in-v2").forEach((element, i) => {
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        y: 20,
+      },
+      {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 70%",
+          end: "bottom 70%",
+          // markers: true,
         },
         opacity: 1,
         y: 0,

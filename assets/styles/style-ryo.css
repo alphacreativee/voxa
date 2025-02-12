@@ -59,8 +59,8 @@ section.section-image {
   height: 100vh;
 }
 
-.section-image__container{
-    height: 100%;
+.section-image__container {
+  height: 100%;
 }
 
 section.section-image img {
@@ -206,10 +206,7 @@ footer .footer-bottom {
   margin-top: 50px;
 }
 footer .footer-top {
-  gap: 80px;
-  position: relative;
-  z-index: 3;
-  background-color: #ff5465;
+  /* background-color: #ff5465; */
 }
 
 footer .footer-top .title-text {
@@ -219,7 +216,6 @@ footer .footer-top .title-text {
   font-weight: 900;
   width: max-content;
   text-transform: uppercase;
-  margin-right: 100px;
   font-family: var(--font-heading);
 }
 
