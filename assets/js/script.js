@@ -63,15 +63,22 @@ function pinLogoHeader() {
         scrub: true,
       },
     });
-    ScrollTrigger.create({
-      trigger: ".our-mission",
-      start: "top top+=40", // Khi section xuất hiện giữa màn hình
-      end: "bottom top",
-      markers: true,
-      onEnter: () => logo.classList.add("in-section"), // Khi vào section
-      onLeave: () => logo.classList.remove("in-section"), // Khi cuộn qua section
-      onEnterBack: () => logo.classList.add("in-section"), // Khi cuộn từ dưới lên vào .our-mission
-      onLeaveBack: () => logo.classList.remove("in-section"),
+    document.querySelectorAll(".logo-white").forEach((section) => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top+=40",
+        end: "bottom top+=40",
+        toggleActions: "play none none reverse",
+        // markers: true,
+        onEnter: () =>
+          document.querySelector("#logo").classList.add("in-section"),
+        onLeave: () =>
+          document.querySelector("#logo").classList.remove("in-section"),
+        onEnterBack: () =>
+          document.querySelector("#logo").classList.add("in-section"),
+        onLeaveBack: () =>
+          document.querySelector("#logo").classList.remove("in-section"),
+      });
     });
   };
   animate();
