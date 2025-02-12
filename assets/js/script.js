@@ -23,7 +23,9 @@ $(document).ready(function () {
   });
 
   pinLogoHeader();
+  scaleSectionImage();
   ourFamily();
+  ScrollTrigger.refresh();
 });
 
 function pinLogoHeader() {
@@ -44,12 +46,12 @@ function pinLogoHeader() {
         scale: scaleFactor,
         autoAlpha: 1,
 
-        duration: 1.5,
+        duration: 1,
         ease: "power2.out" // Sau khi scale xong thì gọi animation scroll
       }
     );
     gsap.from("#logo", {
-      duration: 3,
+      duration: 1.5,
       scale: scaleFactor,
       y: window.innerHeight * 0.5 - scaledHeight * 0.5 + 48,
       x: "0%",
@@ -133,7 +135,6 @@ function scaleSectionImage() {
     }
   );
 }
-scaleSectionImage();
 
 function ourFamily() {
   if (!$("section.our-family").length) return;

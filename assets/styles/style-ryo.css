@@ -15,7 +15,7 @@ section.section-quote .text .line {
   background: linear-gradient(
     to right,
     rgb(255, 255, 255) 50%,
-    rgb(255, 255, 255, 0.8) 50%
+    rgb(255, 255, 255, 0.5) 50%
   );
   background-size: 200% 100%;
   background-position-x: 100%;
