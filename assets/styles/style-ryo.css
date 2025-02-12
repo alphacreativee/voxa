@@ -254,3 +254,8 @@ footer .footer-top a:hover {
 footer .footer-top a:hover svg path {
   fill: #fff;
 }
+@media (min-width: 1520px) {
+  footer .footer-top {
+    justify-content: space-between;
+  }
+}
