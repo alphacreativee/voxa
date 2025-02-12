@@ -2,31 +2,32 @@
 $ = jQuery;
 
 $(document).ready(function () {
-    gsap.config({ trialWarn: false });
-    console.clear();
-    gsap.registerPlugin(ScrollTrigger, SplitType);
-    
-    const split = new SplitType(".quote-wrapper .text span", { type: "chars" });
-    
-    split.lines.forEach((target) => {
-      gsap.to(target, {
-        backgroundPositionX: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: target,
-          markers: false,
-          scrub: 1,
-          start: "top center",
-          end: "bottom center",
-        },
-      });
+  gsap.config({ trialWarn: false });
+  console.clear();
+  gsap.registerPlugin(ScrollTrigger, SplitType);
+
+  const split = new SplitType(".quote-wrapper .text span", { type: "chars" });
+
+  split.lines.forEach((target) => {
+    gsap.to(target, {
+      backgroundPositionX: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: target,
+        markers: false,
+        scrub: 1,
+        start: "top center",
+        end: "bottom center",
+      },
     });
-    
-    pinLogoHeader();
+  });
+
+  pinLogoHeader();
 });
 
 function pinLogoHeader() {
   gsap.registerPlugin(ScrollTrigger);
+  const headerLogo = document.querySelector(".header__logo");
   const logo = document.querySelector("#logo");
   const originalHeight = logo.offsetHeight;
   const scaleFactor = 2.56;
@@ -62,6 +63,42 @@ function pinLogoHeader() {
         scrub: true,
       },
     });
+    ScrollTrigger.create({
+      trigger: ".our-mission",
+      start: "top top+=40", // Khi section xuất hiện giữa màn hình
+      end: "bottom top",
+      markers: true,
+      onEnter: () => logo.classList.add("in-section"), // Khi vào section
+      onLeave: () => logo.classList.remove("in-section"), // Khi cuộn qua section
+      onEnterBack: () => logo.classList.add("in-section"), // Khi cuộn từ dưới lên vào .our-mission
+      onLeaveBack: () => logo.classList.remove("in-section"),
+    });
   };
   animate();
 }
+function customAnimation() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".data-fade-in").forEach((element, i) => {
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        y: 20,
+      },
+      {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 59%",
+          end: "bottom 59%",
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "sine.out",
+        stagger: 0.1,
+      }
+    );
+  });
+}
+customAnimation();
