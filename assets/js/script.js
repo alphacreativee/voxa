@@ -4,7 +4,7 @@ $ = jQuery;
 window.onload = function () {
   window.scrollTo(0, 0);
   ScrollTrigger.refresh();
-}
+};
 
 $(document).ready(function () {
   gsap.config({ trialWarn: false });
@@ -22,8 +22,8 @@ $(document).ready(function () {
         markers: false,
         scrub: 1,
         start: "top center",
-        end: "bottom center"
-      }
+        end: "bottom center",
+      },
     });
   });
 
@@ -44,17 +44,17 @@ function pinLogoHeader() {
   console.log(scaledHeight);
 
   const animate = () => {
-    gsap.fromTo(
-      "#logo",
-      { scale: 1, autoAlpha: 0 }, // Bắt đầu với scale nhỏ và ẩn
-      {
-        scale: scaleFactor,
-        autoAlpha: 1,
+    // gsap.fromTo(
+    //   "#logo",
+    //   { scale: 1, autoAlpha: 0 }, // Bắt đầu với scale nhỏ và ẩn
+    //   {
+    //     scale: scaleFactor,
+    //     autoAlpha: 1,
 
-        duration: 1,
-        ease: "power2.out" // Sau khi scale xong thì gọi animation scroll
-      }
-    );
+    //     duration: 1,
+    //     ease: "power2.out" // Sau khi scale xong thì gọi animation scroll
+    //   }
+    // );
     gsap.from("#logo", {
       duration: 1.5,
       scale: scaleFactor,
@@ -68,8 +68,8 @@ function pinLogoHeader() {
         end: "bottom 50%",
         // pin: true,
         // markers: true,
-        scrub: true
-      }
+        scrub: true,
+      },
     });
     document.querySelectorAll(".logo-white").forEach((section) => {
       ScrollTrigger.create({
@@ -85,7 +85,7 @@ function pinLogoHeader() {
         onEnterBack: () =>
           document.querySelector("#logo").classList.add("in-section"),
         onLeaveBack: () =>
-          document.querySelector("#logo").classList.remove("in-section")
+          document.querySelector("#logo").classList.remove("in-section"),
       });
     });
   };
@@ -99,19 +99,19 @@ function customAnimation() {
       element,
       {
         opacity: 0,
-        y: 20
+        y: 20,
       },
       {
         scrollTrigger: {
           trigger: element,
           start: "top 59%",
-          end: "bottom 59%"
+          end: "bottom 59%",
         },
         opacity: 1,
         y: 0,
         duration: 1,
         ease: "sine.out",
-        stagger: 0.1
+        stagger: 0.1,
       }
     );
   });
