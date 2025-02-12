@@ -67,9 +67,11 @@ function pinLogoHeader() {
       trigger: ".our-mission",
       start: "top top+=40", // Khi section xuất hiện giữa màn hình
       end: "bottom top",
-      // markers: true,
+      markers: true,
       onEnter: () => logo.classList.add("in-section"), // Khi vào section
-      onLeaveBack: () => logo.classList.remove("in-section"), // Khi rời khỏi section
+      onLeave: () => logo.classList.remove("in-section"), // Khi cuộn qua section
+      onEnterBack: () => logo.classList.add("in-section"), // Khi cuộn từ dưới lên vào .our-mission
+      onLeaveBack: () => logo.classList.remove("in-section"),
     });
   };
   animate();
