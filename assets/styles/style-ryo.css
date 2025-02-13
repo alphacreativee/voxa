@@ -134,12 +134,15 @@ section.our-family .our-family__list .list-item .desc {
 }
 
 section.our-family .our-family__list .list-item:hover .title,
+section.our-family .our-family__list .list-item.active .title,
+section.our-family .our-family__list .list-item.active .desc,
 section.our-family .our-family__list .list-item:hover .desc {
   opacity: 1;
   transform: translate(0);
 }
 
-section.our-family .our-family__list .list-item:hover .desc {
+section.our-family .our-family__list .list-item:hover .desc,
+section.our-family .our-family__list .list-item.active .desc {
   transition-delay: 0.2s;
 }
 
@@ -267,5 +270,51 @@ footer .footer-top a:hover svg path {
 @media (min-width: 1520px) {
   footer .footer-top {
     justify-content: space-between;
+  }
+}
+
+@media (max-width : 767px){
+  footer{
+    padding: 100px 24px 20px;
+  }
+
+  .footer__bg{
+    height: 100px;
+    transform: none;
+  }
+
+  .footer__bg::before{
+    height: 100px;
+  }
+
+  .footer__bg img{
+    object-fit: cover;
+  }
+
+  footer .footer-top{
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
+
+  footer .footer-top .title-text{
+    font-size: 40px;
+    line-height: 45px;
+  }
+
+  footer .footer-bottom{
+    margin-top: 40px;
+    flex-direction: column;
+    gap : 20px;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+  section.section-quote .text svg{
+    width: 30px;
+    height: 20px;
+  }
+
+  section.section-quote .text{
+    padding: 50px 0;
   }
 }

@@ -47,7 +47,7 @@
     grid-template-columns: 1fr;
   }
   section.section-quote .quote-wrapper {
-    padding: 110px 40px;
+    padding: 80px 35px;
   }
   section.section-quote .text {
     font-size: 20px;
@@ -56,5 +56,35 @@
   section.section-quote .author {
     font-size: 16px;
     line-height: 24px;
+  }
+
+  section.our-family .our-family__list .list-item .content{
+    width: 80%;
+    transform: none;
+    padding-bottom: 60px;
+  }
+
+  section.our-family .our-family__list .list-item .desc{
+    margin-top: 16px;
+  }
+
+  section.our-family .our-family__list .list-item{
+    align-items: flex-end;
+  }
+
+  section.our-family .our-family__list .list-item::after{
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    transition: all 0.3s ease;
+    border-radius: unset;
+  }
+  
+  section.our-family .our-family__list .list-item.active::after{
+    opacity: 1;
+    height: 100%;
   }
 }

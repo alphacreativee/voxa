@@ -30,6 +30,7 @@ $(document).ready(function () {
   pinLogoHeader();
   scaleSectionImage();
   ourFamily();
+  ourFamilyMobile();
   ScrollTrigger.refresh();
 });
 
@@ -171,4 +172,24 @@ function ourFamily() {
     $(this).css("--x", x + "px");
     $(this).css("--y", y + "px");
   });
+}
+
+function ourFamilyMobile(){
+  if($(window).width > 767) return;
+
+  const fadeIn = document.querySelectorAll(".our-family__list .list-item");
+  if (fadeIn) {
+      fadeIn.forEach(value => {
+        const $delay = value.getAttribute("data-delay") ? value.getAttribute("data-delay") : 0
+
+        gsap.to(value, {
+          scrollTrigger: {
+              trigger      : value,
+              start        : "top 50%",
+              toggleActions: "play none none none",
+              onEnter      : () => value.classList.add("active"),
+          }
+        });
+      })
+  }
 }
