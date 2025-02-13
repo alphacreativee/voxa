@@ -46,7 +46,7 @@ function pinLogoHeader() {
 
   const yPos =
     window.innerWidth < 991
-      ? window.innerHeight * 0.5
+      ? window.innerHeight * 0.5 - scaledHeight * 0.5
       : window.innerHeight * 0.5 - scaledHeight * 0.5 + 48;
   const animate = () => {
     gsap.from("#logo", {
@@ -111,6 +111,7 @@ function customAnimation() {
       }
     );
   });
+  const dataPosV2 = '80%';
   gsap.utils.toArray(".data-fade-in-v2").forEach((element, i) => {
     gsap.fromTo(
       element,
@@ -121,8 +122,8 @@ function customAnimation() {
       {
         scrollTrigger: {
           trigger: element,
-          start: "top 70%",
-          end: "bottom 70%",
+          start: `top ${dataPosV2}`,
+          end: `bottom ${dataPosV2}`,
           // markers: true,
         },
         opacity: 1,
@@ -175,7 +176,7 @@ function ourFamily() {
 }
 
 function ourFamilyMobile(){
-  if($(window).width > 767) return;
+  if($(window).width > 992) return;
 
   const fadeIn = document.querySelectorAll(".our-family__list .list-item");
   if (fadeIn) {

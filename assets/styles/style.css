@@ -148,7 +148,7 @@ body {
 /* section our mission */
 .our-mission {
   background-image: url("../images/img-mission.png");
-
+  background-position: right center;
   background-size: cover;
   width: 100%;
 }
