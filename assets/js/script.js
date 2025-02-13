@@ -46,7 +46,7 @@ function pinLogoHeader() {
 
   const yPos =
     window.innerWidth < 991
-      ? window.innerHeight * 0.5 - scaledHeight * 0.5
+      ? $("section.hero").innerHeight * 0.5 - scaledHeight * 0.5
       : window.innerHeight * 0.5 - scaledHeight * 0.5 + 48;
   const animate = () => {
     gsap.from("#logo", {
