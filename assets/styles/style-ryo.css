@@ -232,6 +232,10 @@ footer .footer-top .title-text {
   font-family: var(--font-heading);
 }
 
+footer .footer-top .title-text *{
+  font-family: var(--font-heading);
+}
+
 footer .footer-top {
   display: flex;
   align-items: flex-start;
